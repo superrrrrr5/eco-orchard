@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <title>ЕкоОрчард – Умно бъдеще за овощните градини</title>
+  <style>
+    * { box-sizing: border-box; scroll-behavior: smooth; }
+    body { margin: 0; font-family: "Poppins", "Segoe UI", Arial, sans-serif; background: #f5fff5; color: #333; overflow-x: hidden; }
+
+    header {
+      background: linear-gradient(to right, rgba(0,0,0,0.4), rgba(0,0,0,0.3)),
+                  url('https://i.imgur.com/nzqAbqh.png') center/cover no-repeat;
+      color: white; text-align: center; padding: 140px 10px; position: relative;
+    }
+
+    header h1 { font-size: 56px; margin: 0; text-shadow: 2px 2px 12px rgba(0,0,0,0.6); letter-spacing: 1px; }
+    header p { font-size: 20px; text-shadow: 1px 1px 6px rgba(0,0,0,0.6); margin-top: 10px; }
+
+    nav {
+      background-color: #2e7d32; display: flex; justify-content: center; flex-wrap: wrap; position: sticky; top: 0; z-index: 10;
+    }
+
+    nav button {
+      background: none; border: none; color: white; padding: 15px 22px; font-size: 16px; cursor: pointer; transition: all 0.3s;
+    }
+
+    nav button:hover { background-color: #1b5e20; transform: translateY(-2px); }
+
+    section {
+      display: none; max-width: 1100px; margin: 50px auto; background: white; border-radius: 16px; padding: 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1); animation: fade 0.5s ease;
+    }
+
+    @keyframes fade { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    .active { display: block; }
+
+    h2 { color: #2e7d32; border-bottom: 2px solid #c8e6c9; padding-bottom: 8px; }
+
+    .download-section { display: flex; justify-content: center; flex-wrap: wrap; gap: 15px; margin-top: 25px; }
+
+    .download-btn {
+      background-color: #2e7d32; color: white; border: none; padding: 12px 18px; border-radius: 10px;
+      font-size: 15px; cursor: pointer; transition: all 0.3s;
+    }
+
+    .download-btn:hover { background-color: #1b5e20; transform: scale(1.05); }
+
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 15px; margin-top: 20px; }
+
+    .gallery img {
+      border-radius: 12px; width: 100%; height: 180px; object-fit: cover; transition: all 0.4s;
+    }
+
+    .gallery img:hover { transform: scale(1.05); box-shadow: 0 4px 12px rgba(0,0,0,0.3); }
+
+    .service { background-color: #f1f8e9; padding: 20px; border-radius: 12px; margin-bottom: 15px; transition: 0.3s; }
+    .service:hover { background-color: #e8f5e9; transform: scale(1.02); }
+    .service img { width: 100%; height: 160px; object-fit: cover; border-radius: 8px; margin-top: 8px; }
+
+    form input, form textarea, form button {
+      width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 10px; font-size: 15px;
+    }
+
+    form button { background-color: #2e7d32; color: white; border: none; cursor: pointer; font-size: 16px; transition: 0.3s; }
+    form button:hover { background-color: #1b5e20; }
+
+    .team { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; }
+    .team div {
+      background-color: #f9fff9; border: 1px solid #dcedc8; border-radius: 12px; text-align: center; padding: 20px; transition: all 0.3s;
+    }
+    .team div:hover { transform: scale(1.05); background-color: #f1f8e9; }
+    .team img { width: 120px; height: 120px; border-radius: 50%; margin-bottom: 10px; object-fit: cover; }
+
+    footer { background-color: #2e7d32; color: white; text-align: center; padding: 20px; margin-top: 60px; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>ЕкоОрчард</h1>
+  <p>Интелигентни решения за здрави овощни градини</p>
+</header>
+
+<nav>
+  <button onclick="showSection('home')">Начало</button>
+  <button onclick="showSection('about')">За нас</button>
+  <button onclick="showSection('services')">Услуги</button>
+  <button onclick="showSection('apps')">Приложения</button>
+  <button onclick="showSection('gallery')">Галерия</button>
+  <button onclick="showSection('team')">Екип</button>
+  <button onclick="showSection('contacts')">Контакти</button>
+</nav>
+
+<section id="home" class="active">
+  <h2>Добре дошли в ЕкоОрчард</h2>
+  <p>Съчетавайки любов към природата с модерни технологии, ние разработваме решения, които правят отглеждането на овощни дървета по-ефективно и устойчиво. 
+  Нашата мисия е да помогнем на производителите да запазят здравето на растенията и качеството на реколтата си.</p>
+  <img src="https://static.themarthablog.com/2017/08/DSC_6110.jpg" alt="EcoOrchard Overview" style="width:100%;border-radius:12px;margin-top:15px;">
+</section>
+
+<section id="about">
+  <h2>За нас</h2>
+  <p><strong>ЕкоОрчард</strong> е българска компания, която комбинира природни принципи с технологични иновации. Създадена през 2023 г., нашата мисия е да
+  предоставим дигитални инструменти, които помагат на фермерите и агро-експертите да управляват своите овощни градини по-умно.</p>
+  <img src="https://www.croptracker.com/images/blog/appleHarvestHeader.png" alt="Team at work" style="width:100%;border-radius:12px;margin-top:15px;">
+</section>
+
+<section id="services">
+  <h2>Нашите услуги</h2>
+  <div class="service">
+    <h3>🌳 Консултации за растителна защита</h3>
+    <p>Специализирани анализи за болести, вредители и почвени условия.</p>
+    <img src="https://gardenerspath.com/wp-content/uploads/2021/03/Frogeye-Leaf-Spot-aka-Black-Rot-Botryosphaeria-on-Apple-Tree.jpg" alt="">
+  </div>
+  <div class="service">
+    <h3>📡 IoT мониторинг</h3>
+    <p>Сензори, които следят температура, влажност и състояние на растенията в реално време.</p>
+    <img src="https://cdn.mos.cms.futurecdn.net/QxGkiJJgJK2HCHkrvsffvi.jpg" alt="">
+  </div>
+  <div class="service">
+    <h3>💧 Автоматизирано напояване</h3>
+    <p>Интелигентна система, която пести вода и гарантира оптимални условия за растеж.</p>
+    <img src="https://www.bhg.com/thmb/1EofLKsqp4w2Dz1r9TqeTIlNk-U=/1244x0/filters:no_upscale():strip_icc()/crab-apple-fruit-tree-rust-d0c0b053-01cd80cdad534ca18eb4c9e0a9a0b247.jpg" alt="">
+  </div>
+</section>
+
+<section id="apps">
+  <h2>Изтеглете нашето приложение</h2>
+  <p>Управлявайте вашата овощна градина отвсякъде с нашето мултиплатформено приложение.</p>
+  <div class="download-section">
+    <button class="download-btn">Windows</button>
+    <button class="download-btn">MacOS</button>
+    <button class="download-btn">Android</button>
+    <button class="download-btn">iOS</button>
+  </div>
+  <img src="https://images.unsplash.com/photo-1581090700227-1e37b190418e?auto=format&fit=crop&w=1000&q=80" alt="App Demo" style="width:100%;border-radius:12px;margin-top:20px;">
+</section>
+
+<section id="gallery">
+  <h2>Галерия</h2>
+  <div class="gallery">
+    <img src="https://www.chrisbowers.co.uk/wp-content/uploads/2024/02/M9-apple-trees.jpg">
+    <img src="https://static.themarthablog.com/2017/08/DSC_6110.jpg">
+    <img src="https://www.bhg.com/thmb/1EofLKsqp4w2Dz1r9TqeTIlNk-U=/1244x0/filters:no_upscale():strip_icc()/crab-apple-fruit-tree-rust-d0c0b053-01cd80cdad534ca18eb4c9e0a9a0b247.jpg">
+    <img src="https://cdn.mos.cms.futurecdn.net/QxGkiJJgJK2HCHkrvsffvi.jpg">
+    <img src="https://www.croptracker.com/images/blog/appleHarvestHeader.png">
+  </div>
+</section>
+
+<!-- NEW UPDATED TEAM SECTION -->
+<section id="team">
+  <h2>Нашият екип</h2>
+  <div class="team">
+
+    <div>
+      <img src="https://i.imgur.com/IPgAJrK.png" alt="Иван Петров">
+      <h4>Иван Петров</h4>
+      <p>Главен агроном</p>
+    </div>
+
+    <div>
+      <img src="https://i.imgur.com/2apIVFF.png" alt="Мариян Георгиев">
+      <h4>Мариян Георгиев</h4>
+      <p>ИТ специалист</p>
+    </div>
+
+    <div>
+      <img src="https://i.imgur.com/SfP0OoQ.png" alt="Дияна Маринова">
+      <h4>Дияна Маринова</h4>
+      <p>Мениджър проекти</p>
+    </div>
+
+    <div>
+      <img src="https://i.imgur.com/S0l75Qq.png" alt="Стела Стоянова">
+      <h4>Стела Стоянова</h4>
+      <p>Експерт растителна защита</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="contacts">
+  <h2>Контакти</h2>
+  <p><strong>Адрес:</strong> гр. Бургас, ул. “Яким Якимов” №12</p>
+  <p><strong>Имейл:</strong> info@ecoorchard.bg</p>
+  <p><strong>Телефон:</strong> +359 888 123 456</p>
+  <p>Следвайте ни: <em>Facebook / Instagram / LinkedIn</em></p>
+</section>
+
+<footer>
+  © 2025 ЕкоОрчард – Интелигентни решения за устойчиво земеделие.
+</footer>
+
+<script>
+  function showSection(id) {
+    const sections = document.querySelectorAll('section');
+    sections.forEach(s => s.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+</body>
+</html>
